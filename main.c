@@ -24,7 +24,7 @@ int main ()
 
     while (strcmp(u_in, "stop") != 0)
     {
-        scanf("%[^\n]%*c", &u_in);
+        scanf("%[^\n]%*c", u_in);
         printf("string: %s\n", u_in);
         if(isdigit(u_in) != 0)
         {
