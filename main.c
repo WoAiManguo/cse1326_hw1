@@ -7,7 +7,6 @@
 int main ()
 {
     char u_in[50];
-    char* tkn;
     char* pend;
     float lat;
     float lon;
