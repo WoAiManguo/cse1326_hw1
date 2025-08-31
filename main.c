@@ -58,13 +58,13 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    fgets(line, MAXLN, file);
+    fgets(line, MAXLN, file); //skips first line if header
 
     if (strstr(line, "country_code"))
     {
     }
     else
-        fseek(file, 0, SEEK_SET);
+        fseek(file, 0, SEEK_SET); //else seeks to beginning of file
 
     Airport *airports = malloc(cap * sizeof(Airport));
 
@@ -119,9 +119,9 @@ int main(int argc, char *argv[])
         if (strcmp(u_in, "stop") == 0)
             break;
 
-        sscanf(u_in, "%ld %ld", &lat, &lon);
+        sscanf(u_in, "%ld %ld", &lat, &lon); //saves stdin to lat and lon
 
-        // printf("lat is %ld, lon is %ld\n", lat, lon);
+
 
         for (int i = 0; i < count; i++)
         {
