@@ -60,13 +60,13 @@ int main(int argc, char *argv[])
 
     fgets(line, MAXLN, file);
 
-
     if (strstr(line, "country_code"))
-    {}
-    else fseek(file, 0, SEEK_SET);
+    {
+    }
+    else
+        fseek(file, 0, SEEK_SET);
 
     Airport *airports = malloc(cap * sizeof(Airport));
-
 
     while (fgets(line, MAXLN, file))
     {
@@ -105,9 +105,6 @@ int main(int argc, char *argv[])
 
     printf("There are %d entries in the list\n", count);
 
-    
-
-
     while (1)
     {
         long lat;
@@ -124,7 +121,7 @@ int main(int argc, char *argv[])
 
         sscanf(u_in, "%ld %ld", &lat, &lon);
 
-        //printf("lat is %ld, lon is %ld\n", lat, lon);
+        // printf("lat is %ld, lon is %ld\n", lat, lon);
 
         for (int i = 0; i < count; i++)
         {
