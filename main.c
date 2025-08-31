@@ -29,11 +29,9 @@ char *strip_quotes(char *str)
     if (str == NULL)
         return NULL;
 
-    // If string starts with a quote, move forward
     if (str[0] == '"')
         str++;
 
-    // Remove trailing quote if present
     size_t len = strlen(str);
     if (len > 0 && str[len - 1] == '"')
     {
@@ -85,8 +83,8 @@ int main(int argc, char *argv[])
 
         while (token && field < 7)
         {
-            token[strcspn(token, "\r\n")] = '\0';  // strip newline
-            tokens[field++] = strip_quotes(token); // strip quotes
+            token[strcspn(token, "\r\n")] = '\0';
+            tokens[field++] = strip_quotes(token);
             token = strtok(NULL, ",");
         }
 
@@ -114,7 +112,7 @@ int main(int argc, char *argv[])
     while (1)
     {
         fgets(u_in, sizeof(u_in), stdin);
-        u_in[strcspn(u_in, "\n")] = '\0'; // Strip newline
+        u_in[strcspn(u_in, "\n")] = '\0';
 
         if (strcmp(u_in, "stop") == 0)
             break;
