@@ -105,22 +105,24 @@ int main(int argc, char *argv[])
 
     printf("There are %d entries in the list\n", count);
 
-    char u_in[100];
-    long int lat;
-    long int lon;
+    
+
 
     while (1)
     {
-        fgets(u_in, sizeof(u_in), stdin);
+        long lat;
+        long lon;
+
+        char u_in[100];
+        scanf("%99[^\n]", u_in);
+        getchar();
+
         u_in[strcspn(u_in, "\n")] = '\0';
 
         if (strcmp(u_in, "stop") == 0)
             break;
 
-        if (sscanf(u_in, "%ld %ld", &lat, &lon) != 2)
-        {
-            continue;
-        }
+        sscanf(u_in, "%ld %ld", &lat, &lon);
 
         //printf("lat is %ld, lon is %ld\n", lat, lon);
 
